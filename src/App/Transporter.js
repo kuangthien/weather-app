@@ -1,7 +1,7 @@
 export const fetchForcast = async (woeid) => {
   let rs = {}
   try {
-    const url = `https://www.metaweather.com/api/location/${woeid}/ `
+    const url = `/api/location/${woeid}/ `
     rs = await (await fetch(url)).json()
   } catch (error) {
     // show msg error?
@@ -11,7 +11,7 @@ export const fetchForcast = async (woeid) => {
 export const fetchLocations = async (keyword) => {
   let rs = []
   try {
-    const url = `https://www.metaweather.com/api/location/search/?query=${keyword}`
+    const url = `/api/location/search/?query=${keyword}`
     rs = await (await fetch(url)).json()
   } catch (error) {
     // show msg error?

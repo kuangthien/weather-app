@@ -46,6 +46,7 @@ const SearchBox = () => {
         }}>
         {/* pls dont move out form to avoid loose focusing : */}
         <input
+          data-testid ="search-input"
           onChange={handleChangeInput}
           ref={refSearchInput}
           className="form-control"

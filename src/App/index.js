@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App p-3">
       <div className="container">
+        <h1 className="h4">Weather App</h1>
         <CtxSearch.Provider value={{ results, setResults, searchSugesstions, setSearchSugesstions }}>
           <SearchBox />
           <SearchResults />
