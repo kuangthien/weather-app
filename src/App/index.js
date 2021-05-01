@@ -8,11 +8,12 @@ import CtxSearch from './CtxSearch'
 dayjs.extend(utc)
 
 function App() {
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState({})
+  const [searchSugesstions, setSearchSugesstions] = useState([])
   return (
     <div className="App p-3">
       <div className="container">
-        <CtxSearch.Provider value={{ results, setResults }}>
+        <CtxSearch.Provider value={{ results, setResults, searchSugesstions, setSearchSugesstions }}>
           <SearchBox />
           <SearchResults />
         </CtxSearch.Provider>

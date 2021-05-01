@@ -6,6 +6,16 @@ dayjs.extend(utc)
 
 const CtxSearch = createContext({})
 export const CtxSearchAdaptor = {
+  updateLocationsFromServer: (json = []) => {
+    const rs = json.map((o) => {
+      const { location_type, title, woeid } = o
+      if (location_type === 'City') {
+        return { title, woeid }
+      }
+      return false
+    })
+    return rs.filter((o) => !!o)
+  },
   updateFromServer: (json) => {
     // Step: mapping to context
     // API ref: https://www.metaweather.com/api/#location

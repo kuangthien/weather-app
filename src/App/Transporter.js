@@ -8,8 +8,8 @@ export const fetchForcast = async (woeid) => {
   }
   return rs
 }
-export const fetchApi = async (keyword) => {
-  let rs = {}
+export const fetchLocations = async (keyword) => {
+  let rs = []
   try {
     const url = `https://www.metaweather.com/api/location/search/?query=${keyword}`
     rs = await (await fetch(url)).json()
@@ -19,8 +19,8 @@ export const fetchApi = async (keyword) => {
   return rs
 }
 const Transporter = {
-  fetchApi,
   fetchForcast,
+  fetchLocations,
 }
 
 export default Transporter
