@@ -16,6 +16,7 @@ const SearchResults = () => {
   // Todo: loading state
   const { results } = useContext(CtxSearch)
   const { forecastData = [], timezone, title } = results
+  if(!forecastData.length) return null
   const renderOne = (o, i) => <OneDayForecast {...o} key={i} />
   return (
     <>

@@ -6,8 +6,10 @@ import App from './App'
 import mockTestData from './mockTestData'
 
 const server = setupServer(
-  rest.get('/api/location/*', (req, res, ctx) => {
-    if (req.url.pathname.includes('search')) {
+  rest.get('/*', (req, res, ctx) => {
+    // I prefer to connect to a test server more than a mock like this
+    // but it take time for me to setup
+    if (req.url.pathname.includes('locationSearch')) {
       return res(ctx.json(mockTestData.locationSearch))
     } else {
       return res(ctx.json(mockTestData.location))
