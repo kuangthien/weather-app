@@ -26,3 +26,5 @@ _In case of having issues related to babel-eslint, please remove **global** yarn
 ## Deployment
 
 Just push code to master branch. I use Netlify CI/CD and e.thing works automatically.
+
+[https://2021-weather-app.netlify.app](https://2021-weather-app.netlify.app)
