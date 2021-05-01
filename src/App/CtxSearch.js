@@ -7,14 +7,18 @@ dayjs.extend(utc)
 const CtxSearch = createContext({})
 export const CtxSearchAdaptor = {
   updateLocationsFromServer: (json = []) => {
-    const rs = json.map((o) => {
-      const { location_type, title, woeid } = o
-      if (location_type === 'City') {
-        return { title, woeid }
-      }
-      return false
-    })
-    return rs.filter((o) => !!o)
+    let finalRs = []
+    try {
+      const rs = json.map((o) => {
+        const { location_type, title, woeid } = o
+        if (location_type === 'City') {
+          return { title, woeid }
+        }
+        return false
+      })
+      finalRs = rs.filter((o) => !!o)
+    } catch (error) {}
+    return finalRs
   },
   updateFromServer: (json) => {
     // Step: mapping to context
